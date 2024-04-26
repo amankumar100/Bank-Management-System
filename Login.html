@@ -1,0 +1,71 @@
+<!--- This the login page for user to login -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            background-color: #333;
+            border: 2px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            background-color: red; 
+        }
+        input[type="submit"]:hover {
+            background-color: #fff;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="LoginServlet" method="post">
+        <label for="uname">Enter Username:</label>
+        <input type="text" id="uname" name="uname" required> <br> 
+        <br/>
+        <label for="pwd">Enter Password:</label>
+        <input type="password" id="pwd" name="pwd" required> <br>
+        <br/>
+        <input type="submit" value="Login">
+        <p>If not yet registered? <a href="Register.html">Register Now</a></p>
+    </form>
+</body>
+</html>
