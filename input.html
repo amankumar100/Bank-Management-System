@@ -1,0 +1,136 @@
+<!-- This is the main page of Bank management system where user can insert, delete, deposit and withdraw account details of user. -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bank Management System</title>
+<style>
+    body {
+        background-color: #1e1e1e;
+        color: white;
+        margin: 0; 
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px; 
+    }
+    .operation {
+        border: 2px solid #444;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #222;
+        border-radius: 10px;
+    }
+    input[type="submit"] {
+        width: 200px; 
+        height: 50px; 
+        font-size: 18px; 
+        margin-top: 20px; 
+        background-color: #FF6347;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+        background-color: #FF4500;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    label {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: calc(100% - 40px); /* Adjusted width */
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #444;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+    #logout-container {
+        text-align: center;
+        margin-top: 20px; 
+    }
+    #logoutButton {
+        padding: 10px 40px;
+        font-size: 24px;
+        background-color: #FF0000;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #logoutButton:hover {
+        background-color: #DC143C;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="operation">
+        <h2>Insert Account</h2>
+        <form action="InsertServlet" method="post">
+            <label for="num">Account Number:</label> <br><br>
+            <input type="text" id="num" name="num" required> 
+            <label for="name">Name:</label> <br><br>
+            <input type="text" id="name" name="name" required>
+            <label for="balance">Balance:</label> <br><br>
+            <input type="text" id="balance" name="balance" required>
+            <input type="submit" value="Insert">
+        </form>
+    </div>
+
+    <div class="operation">
+        <h2>Delete Account</h2>
+        <form action="DeleteServlet" method="post">
+            <label for="delNum">Account Number:</label> <br><br>
+            <input type="text" id="delNum" name="num" required> 
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+
+    <div class="operation">
+        <h2>Deposit Amount</h2>
+        <form action="DepositServlet" method="post">
+            <label for="depNum">Account Number:</label> <br><br>
+            <input type="text" id="depNum" name="num" required> 
+            <label for="depAmt">Amount:</label> <br><br>
+            <input type="text" id="depAmt" name="amt" required> 
+            <input type="submit" value="Deposit">
+        </form>
+    </div>
+
+    <div class="operation">
+        <h2>Withdraw Amount</h2>
+        <form action="WithdrawServlet" method="post">
+            <label for="withNum">Account Number:</label> <br><br>
+            <input type="text" id="withNum" name="num" required> 
+            <label for="withAmt">Amount:</label> <br><br>
+            <input type="text" id="withAmt" name="amt" required> 
+            <input type="submit" value="Withdraw">
+        </form>
+    </div>
+</div>
+
+<div id="logout-container">
+    <form action="http://localhost:8007/UserDtls/Login.html" method="get">
+        <input type="submit" value="Logout" id="logoutButton">
+    </form>
+</div>
+
+</body>
+</html>
