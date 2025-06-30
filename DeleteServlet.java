@@ -1,4 +1,4 @@
-// // This is the servlet made to delete user details.
+// This is the servlet made to delete user details.
 
 package com.account;
 
